@@ -23,6 +23,11 @@
 
 <body>
 
+<h1><h2 id="问题1-hexo指令无法执行"><a href="#问题1-hexo指令无法执行" class="headerlink" title="问题1 hexo指令无法执行"></a>问题1 hexo指令无法执行</h2><p>可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。</p>
+<h2 id="问题2-“Deployer-not-found-github”"><a href="#问题2-“Deployer-not-found-github”" class="headerlink" title="问题2 “Deployer not found: github”"></a>问题2 “Deployer not found: github”</h2><p>更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_config.yml主配置文件。后来终于在一些技术社区里找到了原因，需要将原来_config.yml配置中的deploy下的“type”字段中的“github”改为“git”。<br>再执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>重新deploy即可。<br>后来发现早有人在issue里提到了这个问题，而且也提及了解决方法，虽然不知为何开发者要修改这一参数。</p>
+</h1>
+<hr>
 <h2 id="问题1-hexo指令无法执行"><a href="#问题1-hexo指令无法执行" class="headerlink" title="问题1 hexo指令无法执行"></a>问题1 hexo指令无法执行</h2><p>可能是升级方法不对，导致hexo generate指令也无法执行，后来索性重装了git和node，重新安装hexo。generate和server指令都能执行了，但是出现了问题2。</p>
 <h2 id="问题2-“Deployer-not-found-github”"><a href="#问题2-“Deployer-not-found-github”" class="headerlink" title="问题2 “Deployer not found: github”"></a>问题2 “Deployer not found: github”</h2><p>更新文章执行hexo deploy时，出现以上提示，找来找去始终没发现原因。我备份了原来的source、themes文件夹和_config.yml主配置文件。后来终于在一些技术社区里找到了原因，需要将原来_config.yml配置中的deploy下的“type”字段中的“github”改为“git”。<br>再执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>重新deploy即可。<br>后来发现早有人在issue里提到了这个问题，而且也提及了解决方法，虽然不知为何开发者要修改这一参数。</p>
